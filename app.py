@@ -19,7 +19,7 @@ def contato():
     return render_template('contato.html')
 
 @app.route('/input')
-def contato():
+def input():
     return render_template('input.html')
 
 if __name__ == '__main__':
