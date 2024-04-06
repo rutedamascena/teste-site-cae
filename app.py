@@ -10,9 +10,9 @@ def index():
 def sobre_mim():
     return render_template('sobremim.html')
 
-@app.route('/portifolio')
+@app.route('/portfolio')
 def portfolio():
-    return render_template('portifolio.html')
+    return render_template('portfolio.html')
 
 @app.route('/contato')
 def contato():
