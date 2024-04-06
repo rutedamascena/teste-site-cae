@@ -3,7 +3,7 @@ from flask import Flask, render_template, url_for
 app = Flask(__name__)
 
 @app.route('/')
-def home():
+def index():
     return render_template('home.html')
 
 @app.route('/sobremim')
@@ -21,6 +21,3 @@ def contato():
 @app.route('/input')
 def input():
     return render_template('input.html')
-
-if __name__ == '__main__':
-    app.run(debug=True)
