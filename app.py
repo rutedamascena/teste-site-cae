@@ -18,9 +18,9 @@ def portfolio():
 def contato():
     return render_template('contato.html')
 
+@app.route('/input')
+def contato():
+    return render_template('input.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
-<<<<<<< HEAD
-   
-=======
->>>>>>> a136eeee18ad18c3a3bd4693a4e50e6be077b6a6
