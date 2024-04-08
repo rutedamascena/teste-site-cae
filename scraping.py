@@ -1,6 +1,6 @@
 import requests
 import bs4
-import pandas
+import pandas as pd
 
 def buscar_noticias_bahia_noticias(url):
     requisicao = requests.get(url)
@@ -20,11 +20,17 @@ def buscar_noticias_bahia_noticias(url):
         titulo_ = titulo.text.strip('...')
         manchetes_link.append([titulo_, link_])
     
-    bahia_noticias = pandas.DataFrame(manchetes_link, columns=['Título', 'Link'])
+    bahia_noticias = pd.DataFrame(manchetes_link, columns=['Título', 'Link'])
     bahia_noticias['veículo'] = 'BAHIA NOTÍCIAS'
     
     return bahia_noticias
 
+def dataframe_para_html(dataframe):
+    # Converter DataFrame para HTML
+    html = dataframe.to_html(index=False)  # index=False para não incluir o índice do DataFrame
+    return html
+
 url = 'https://www.bahianoticias.com.br/pesquisa/petrobras'
 dados_noticias = buscar_noticias_bahia_noticias(url)
-print(dados_noticias)
+dados_html = dataframe_para_html(dados_noticias)
+print(dados_html)  # Apenas para verificar a saída HTML no console
