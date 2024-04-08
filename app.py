@@ -1,5 +1,6 @@
-from flask import Flask, render_template, url_for, request
+from flask import Flask, render_template, url_for
 from scraping import buscar_noticias_bahia_noticias
+import requests
 
 app = Flask(__name__)
 
