@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Busca</title>
-    <link rel="stylesheet" href="{{url_for('static',filename='css/input.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/input.css') }}">
 </head>
 <body>
     <nav>
@@ -29,7 +29,16 @@
     <!-- Seção para exibir os dados de notícias -->
     <section id="dados_noticias">
         <h2>Dados das Notícias</h2>
-        {{ dados_html|safe }}
+        {% if dados_noticias %}
+            <ul>
+                {% for noticia in dados_noticias %}
+                    <li>{{ noticia.titulo }}</li>
+                    <li>{{ noticia.link }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Nenhuma notícia encontrada.</p>
+        {% endif %}
     </section>
 </body>
 </html>

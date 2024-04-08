@@ -1,6 +1,5 @@
 from flask import Flask, render_template, url_for
 from scraping import buscar_noticias_bahia_noticias
-import requests
 
 app = Flask(__name__)
 
@@ -25,7 +24,7 @@ def input():
     return render_template('input.html')
 
 @app.route('/processar_busca', methods=['POST'])
-def buscar_noticias_bahia_noticias(url):
-    url = 'https://www.bahianoticias.com.br/pesquisa/petrobras'  # URL para a raspagem de dados
+def processar_busca():
+    url = 'https://www.bahianoticias.com.br/pesquisa/petrobras'
     dados_noticias = buscar_noticias_bahia_noticias(url)
     return render_template('input.html', dados_noticias=dados_noticias)
