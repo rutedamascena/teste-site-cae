@@ -23,5 +23,5 @@ def buscar_noticias_bahia_noticias(url):
     bahia_noticias = pd.DataFrame(manchetes_link, columns=['Título', 'Link'])
     bahia_noticias['veículo'] = 'BAHIA NOTÍCIAS'
     
-    html = bahia_noticias.to_html(index=False)  # Convertendo DataFrame para HTML
-    return html
+    dados_html = bahia_noticias.to_html(index=False)  # Convertendo DataFrame para HTML
+    return dados_html
