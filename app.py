@@ -1,5 +1,6 @@
 from flask import Flask, render_template, url_for
-from scraping import gerar_dados_html  
+from scraping import dados_html 
+from scraping import gerar_dados_html 
 
 app = Flask(__name__, template_folder='templates')
 
