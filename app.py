@@ -1,7 +1,7 @@
 from flask import Flask, render_template, url_for
 from scraping import buscar_noticias_bahia_noticias
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 
 @app.route('/')
 def index():
