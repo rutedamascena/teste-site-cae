@@ -27,4 +27,4 @@ def input():
 def processar_busca():
     url = 'https://www.bahianoticias.com.br/pesquisa/petrobras'
     dados_html = buscar_noticias_bahia_noticias(url)
-    return render_template('input.html', dados_html,buscar_noticias_bahia_noticias)
+    return render_template('input.html', dados_html=dados_html)
