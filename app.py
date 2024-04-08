@@ -25,7 +25,7 @@ def input():
     return render_template('input.html')
 
 @app.route('/processar_busca', methods=['POST'])
-def processar_busca():
+def buscar_noticias_bahia_noticias(url):
     url = 'https://www.bahianoticias.com.br/pesquisa/petrobras'  # URL para a raspagem de dados
     dados_noticias = buscar_noticias_bahia_noticias(url)
     return render_template('input.html', dados_noticias=dados_noticias)
