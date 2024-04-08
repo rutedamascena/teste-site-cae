@@ -24,3 +24,7 @@ def buscar_noticias_bahia_noticias(url):
     bahia_noticias['veículo'] = 'BAHIA NOTÍCIAS'
     
     return bahia_noticias
+
+url = 'https://www.bahianoticias.com.br/pesquisa/petrobras'
+dados_noticias = buscar_noticias_bahia_noticias(url)
+print(dados_noticias)
