@@ -20,8 +20,8 @@ def contato():
     return render_template('contato.html')
 
 @app.route('/input')
-def input():
-    return render_template('input.html')
+def inputx():
+    return render_template('input.html',dados_html=dados_html)
 
 @app.route('/processar_busca', methods=['POST'])
 def processar_busca():
