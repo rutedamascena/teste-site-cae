@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, request
 from scraping import dados_html 
-import email
+from envio_email import enviar_email_com_html
 
 app = Flask(__name__, template_folder='templates')
 
@@ -33,3 +33,9 @@ def processar_busca():
 def dinamica_email():
     destinatarios = request.form['destinatarios']
     return render_template('dinamica.html', destinatarios=destinatarios, dados_html=dados_html)
+
+@app.route('/destinatarios', methods=['POST'])
+def enviar_email():
+    destinatarios = request.form['destinatarios']
+    enviar_email_com_html(dados_html)
+    return render_template('dinamica.html', destinatarios=destinatarios,dados_html=dados_html)
