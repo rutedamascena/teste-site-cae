@@ -1,4 +1,5 @@
 Flask
 gunicorn
 Pandas
-BeautifulSoup4 
+BeautifulSoup4
+requests
