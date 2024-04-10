@@ -30,12 +30,9 @@ def processar_busca():
     return render_template('dinamica.html', dados_html=dados_html)
 
 @app.route('/destinatarios', methods=['POST'])
-def dinamica_email():
-    destinatarios = request.form['destinatarios']
-    return render_template('dinamica.html', destinatarios=destinatarios, dados_html=dados_html)
-
-@app.route('/destinatarios', methods=['POST'])
 def enviar_email():
-    destinatarios = request.form['destinatarios']
+    destinatario_email = request.form['destinatarios']
     enviar_email_com_html(dados_html)
-    return render_template('dinamica.html', destinatarios=destinatarios,dados_html=dados_html)
+    return render_template('dinamica.html', destinatario_email,dados_html=dados_html)
+
+

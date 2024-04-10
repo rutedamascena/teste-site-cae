@@ -1,23 +1,24 @@
 
 import smtplib
-from email.mime.multipart import MIMEMultipart
+from email.mime.multipart import MIMEMultipart 
 from email.mime.text import MIMEText
 from scraping import dados_html
-from dotenv import load_dotenv 
+import dotenv
 import os 
+
 
 def enviar_email_com_html(html):
     smtp_server = "smtp-relay.brevo.com"
     port = 587
     email = "damascenarute@gmail.com"
-    password =  os.getenv ('chave_brevo') 
+    password =  "jzSDhOsNVd8nm0b"
     remetente = "damascenarute@gmail.com"
-    destinatarios = [""]
+    destinatarios = ['destinatario_email']
 
 
     msg = MIMEMultipart()
     msg['From'] = remetente
-    msg['To'] = ", ".join(destinatarios)
+    msg['To'] = (destinatarios)
     msg['Subject'] = 'E-mail com Dados do Clipping'
 
     msg.attach(MIMEText(html, 'html'))
