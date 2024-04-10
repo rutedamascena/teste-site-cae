@@ -20,10 +20,10 @@ def contato():
     return render_template('contato.html')
 
 @app.route('/input')
-def inputx():
-    return render_template('input.html',dados_html=dados_html)
+def dinamica():
+    return render_template('dinamica.html',dados_html=dados_html)
 
 @app.route('/processar_busca', methods=['POST'])
 def processar_busca():
     url = 'https://www.bahianoticias.com.br/pesquisa/petrobras'
-    return render_template('input.html', dados_html=dados_html)
+    return render_template('dinamica.html', dados_html=dados_html)
