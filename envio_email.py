@@ -4,7 +4,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from scraping import dados_html
 #import dotenv
-#import os SOCORRO
+#import os SOCORROO
 
 
 def enviar_email_com_html(html):
