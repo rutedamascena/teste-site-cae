@@ -3,12 +3,14 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from scraping import dados_html
+from dotenv import load_dotenv 
+import os 
 
 def enviar_email_com_html(html):
     smtp_server = "smtp-relay.brevo.com"
     port = 587
     email = "damascenarute@gmail.com"
-    password = "WjzSDhOsNVd8nm0b"
+    password =  os.getenv ('chave_brevo') 
     remetente = "damascenarute@gmail.com"
     destinatarios = [""]
 
