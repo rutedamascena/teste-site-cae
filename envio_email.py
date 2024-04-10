@@ -13,12 +13,12 @@ def enviar_email_com_html(html):
     email = "damascenarute@gmail.com"
     password =  "jzSDhOsNVd8nm0b"
     remetente = "damascenarute@gmail.com"
-    destinatarios = ['destinatario_email']
+    destinatario_email = []
 
 
     msg = MIMEMultipart()
     msg['From'] = remetente
-    msg['To'] = (destinatarios)
+    msg['To'] = destinatario_email
     msg['Subject'] = 'E-mail com Dados do Clipping'
 
     msg.attach(MIMEText(html, 'html'))
