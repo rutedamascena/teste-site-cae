@@ -19,8 +19,8 @@ def portfolio():
 def contato():
     return render_template('contato.html')
 
-@app.route('/input')
-def imputx():
+@app.route('/dinamica')
+def dinamica():
     return render_template('dinamica.html',dados_html=dados_html)
 
 @app.route('/processar_busca', methods=['POST'])
