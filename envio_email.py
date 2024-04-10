@@ -13,8 +13,7 @@ def enviar_email_com_html(html):
     email = "damascenarute@gmail.com"
     password =  "jzSDhOsNVd8nm0b"
     remetente = "damascenarute@gmail.com"
-    destinatario_email = []
-
+    destinatario_email = "anadirdamascena@gmail.com"
 
     msg = MIMEMultipart()
     msg['From'] = remetente

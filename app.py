@@ -29,9 +29,10 @@ def processar_busca():
     url = 'https://www.bahianoticias.com.br/pesquisa/petrobras'
     return render_template('dinamica.html', dados_html=dados_html)
 
-@app.route('/destinatario_email', methods=['POST'])
+
+@app.route('/destinatarios', methods=['POST'])
 def enviar_email():
-    destinatario_email = request.form['destinatarios']
+    destinatario_email = request.form['destinatario_email']
     enviar_email_com_html(dados_html)
     return render_template('dinamica.html', destinatario_email,dados_html=dados_html)
 
